@@ -10,7 +10,7 @@
       body {
         margin: 0;
         font-family: 'Roboto', sans-serif;
-        background-image: url('flowing_river.gif');
+        background-image: url('flowing river.gif');
         background-size: cover;
         background-position: center;
         background-attachment: fixed;
@@ -56,6 +56,8 @@
         max-width: 800px;
         margin: 0 auto;
         display: none;
+        background-color: rgba(255, 255, 255, 0.9); /* Semi-transparent white for readability */
+        border-radius: 10px;
       }
 
       .section.active {
@@ -235,32 +237,4 @@
         <h3>Contact Information</h3>
         <p>
           <strong>Email:</strong> ✉️ <a href="mailto:somnathluitel360@gmail.com">somnathluitel360@gmail.com</a><br>
-          <strong>Email:</strong> ✉️ <a href="mailto:er.somnathluitel@gmail.com">er.somnathluitel@gmail.com</a><br>
-          <strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/somnath-luitel/" target="_blank">Somnath Luitel</a><br>
-          <strong>GitHub:</strong> <a href="https://github.com/shreesomnath" target="_blank">shreesomnath</a>
-        </p>
-      </div>
-    </section>
-
-    <footer>
-      <p>© 2025 Somnath Luitel. All rights reserved.</p>
-    </footer>
-
-    <script>
-      function toggleSidebar() {
-        document.getElementById("sidebar").classList.toggle("open");
-      }
-
-      function showSection(sectionId) {
-        // Hide all sections
-        document.querySelectorAll('.section').forEach(section => {
-          section.classList.remove('active');
-        });
-        // Show the selected section
-        document.getElementById(sectionId).classList.add('active');
-        // Close the sidebar
-        toggleSidebar();
-      }
-    </script>
-  </body>
-</html>
+          <strong>Email:</strong>
