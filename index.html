@@ -19,6 +19,7 @@
         padding: 60px 20px;
         text-align: center;
         color: white;
+        position: relative;
       }
 
       header img {
@@ -59,7 +60,7 @@
         color: #006064;
       }
 
-      .publication-item {
+      .publication-item, .blog-item, .article-item {
         margin-bottom: 20px;
         text-align: left;
         background-color: #ffffff;
@@ -68,18 +69,18 @@
         box-shadow: 0 2px 4px rgba(0,0,0,0.1);
       }
 
-      .publication-item h3 {
+      .publication-item h3, .blog-item h3, .article-item h3 {
         margin: 0 0 10px;
         font-size: 1.2em;
         color: #00796b;
       }
 
-      .publication-item h3 a {
+      .publication-item h3 a, .blog-item h3 a, .article-item h3 a {
         color: #00796b;
         text-decoration: none;
       }
 
-      .publication-item h3 a:hover {
+      .publication-item h3 a:hover, .blog-item h3 a:hover, .article-item h3 a:hover {
         text-decoration: underline;
       }
 
@@ -89,10 +90,66 @@
         text-align: center;
         padding: 20px 0;
       }
+
+      /* Sidebar Menu Styles */
+      .hamburger {
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        font-size: 1.5em;
+        color: white;
+        cursor: pointer;
+      }
+
+      .sidebar {
+        height: 100%;
+        width: 0;
+        position: fixed;
+        top: 0;
+        right: 0;
+        background-color: #006064;
+        overflow-x: hidden;
+        transition: 0.3s;
+        padding-top: 60px;
+        z-index: 1;
+      }
+
+      .sidebar a {
+        padding: 8px 8px 8px 32px;
+        text-decoration: none;
+        font-size: 1.2em;
+        color: white;
+        display: block;
+        transition: 0.3s;
+      }
+
+      .sidebar a:hover {
+        color: #00bcd4;
+      }
+
+      .sidebar .closebtn {
+        position: absolute;
+        top: 20px;
+        right: 25px;
+        font-size: 1.5em;
+        margin-left: 50px;
+      }
+
+      .open .sidebar {
+        width: 250px;
+      }
     </style>
   </head>
   <body>
     <header>
+      <div class="hamburger" onclick="toggleSidebar()">&#9776;</div>
+      <div id="sidebar" class="sidebar">
+        <a href="javascript:void(0)" class="closebtn" onclick="toggleSidebar()">&times;</a>
+        <a href="#about">About Me</a>
+        <a href="#publications">Publications</a>
+        <a href="#blogs">Blogs</a>
+        <a href="#articles">Articles</a>
+      </div>
       <img src="somnath.jpg" alt="Somnath Luitel">
       <h1>Somnath Luitel</h1>
       <h2>Civil Engineer | Water Enthusiast</h2>
@@ -103,7 +160,7 @@
       </div>
     </header>
 
-    <section class="section">
+    <section id="about" class="section">
       <h2>About Me</h2>
       <p>
         I am a passionate civil engineer focused on water resource management and environmental sustainability. Currently working on satellite-based precipitation research and bias correction in Nepal with international collaboration.
@@ -113,7 +170,7 @@
       </p>
     </section>
 
-    <section class="section">
+    <section id="publications" class="section">
       <h2>Publications</h2>
       <div class="publication-item">
         <h3><a href="https://doi.org/10.3126/jsce.v11i01.73526" target="_blank">Flood Hazard Mapping and Flood Vulnerability Analysis of Building Structures at Settlement-Scale</a></h3>
@@ -127,8 +184,30 @@
       </div>
     </section>
 
+    <section id="blogs" class="section">
+      <h2>Blogs</h2>
+      <div class="blog-item">
+        <h3><a href="#" target="_blank">Coming Soon</a></h3>
+        <p><strong>Summary:</strong> Blog posts on water resource management and data science applications will be added soon.</p>
+      </div>
+    </section>
+
+    <section id="articles" class="section">
+      <h2>Articles</h2>
+      <div class="article-item">
+        <h3><a href="#" target="_blank">Coming Soon</a></h3>
+        <p><strong>Summary:</strong> Articles on civil engineering and sustainability topics will be added soon.</p>
+      </div>
+    </section>
+
     <footer>
       <p>© 2025 Somnath Luitel. All rights reserved.</p>
     </footer>
+
+    <script>
+      function toggleSidebar() {
+        document.getElementById("sidebar").classList.toggle("open");
+      }
+    </script>
   </body>
 </html>
