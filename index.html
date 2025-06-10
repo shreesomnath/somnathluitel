@@ -60,7 +60,7 @@
         color: #006064;
       }
 
-      .publication-item, .blog-item, .article-item {
+      .publication-item, .blog-item, .article-item, .contact-item {
         margin-bottom: 20px;
         text-align: left;
         background-color: #ffffff;
@@ -69,7 +69,7 @@
         box-shadow: 0 2px 4px rgba(0,0,0,0.1);
       }
 
-      .publication-item h3, .blog-item h3, .article-item h3 {
+      .publication-item h3, .blog-item h3, .article-item h3, .contact-item h3 {
         margin: 0 0 10px;
         font-size: 1.2em;
         color: #00796b;
@@ -132,23 +132,23 @@
         top: 20px;
         right: 25px;
         font-size: 1.5em;
-        margin-left: 50px;
       }
 
-      .open .sidebar {
+      .sidebar.open {
         width: 250px;
       }
     </style>
   </head>
   <body>
     <header>
-      <div class="hamburger" onclick="toggleSidebar()">&#9776;</div>
+      <div class="hamburger" onclick="toggleSidebar()">☰</div>
       <div id="sidebar" class="sidebar">
-        <a href="javascript:void(0)" class="closebtn" onclick="toggleSidebar()">&times;</a>
+        <a href="javascript:void(0)" class="closebtn" onclick="toggleSidebar()">×</a>
         <a href="#about">About Me</a>
         <a href="#publications">Publications</a>
         <a href="#blogs">Blogs</a>
         <a href="#articles">Articles</a>
+        <a href="#contact">Contact</a>
       </div>
       <img src="somnath.jpg" alt="Somnath Luitel">
       <h1>Somnath Luitel</h1>
@@ -197,6 +197,16 @@
       <div class="article-item">
         <h3><a href="#" target="_blank">Coming Soon</a></h3>
         <p><strong>Summary:</strong> Articles on civil engineering and sustainability topics will be added soon.</p>
+      </div>
+    </section>
+
+    <section id="contact" class="section">
+      <h2>Contact</h2>
+      <div class="contact-item">
+        <h3>Contact Information</h3>
+        <p><strong>Email:</strong> <a href="mailto:your.email@example.com">your.email@example.com</a><br>
+        <strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/somnath-luitel/" target="_blank">Somnath Luitel</a><br>
+        <strong>GitHub:</strong> <a href="https://github.com/shreesomnath" target="_blank">shreesomnath</a></p>
       </div>
     </section>
 
