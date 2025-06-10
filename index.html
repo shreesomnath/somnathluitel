@@ -10,19 +10,8 @@
       body {
         margin: 0;
         font-family: 'Roboto', sans-serif;
+        background-color: #e0f7fa;
         color: #004d40;
-        position: relative;
-        min-height: 100vh;
-      }
-
-      #background-gif {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        z-index: -1;
-        object-fit: cover;
       }
 
       header {
@@ -64,8 +53,6 @@
         max-width: 800px;
         margin: 0 auto;
         display: none;
-        background-color: rgba(255, 255, 255, 0.9); /* Semi-transparent white for readability */
-        border-radius: 10px;
       }
 
       .section.active {
@@ -164,7 +151,6 @@
     </style>
   </head>
   <body>
-    <img id="background-gif" src="flowing river.gif" alt="Flowing River Background">
     <header>
       <div class="hamburger" onclick="toggleSidebar()">☰</div>
       <div id="sidebar" class="sidebar">
