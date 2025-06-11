@@ -71,7 +71,7 @@
         color: #006064;
       }
 
-      .publication-item, .blog-item, .article-item, .contact-item {
+      .publication-item, .blog-item, .article-item, .contact-item, .resume-item {
         margin-bottom: 20px;
         text-align: left;
         background-color: #ffffff;
@@ -80,18 +80,18 @@
         box-shadow: 0 2px 4px rgba(0,0,0,0.1);
       }
 
-      .publication-item h3, .blog-item h3, .article-item h3, .contact-item h3 {
+      .publication-item h3, .blog-item h3, .article-item h3, .contact-item h3, .resume-item h3 {
         margin: 0 0 10px;
         font-size: 1.2em;
         color: #00796b;
       }
 
-      .publication-item h3 a, .blog-item h3 a, .article-item h3 a {
+      .publication-item h3 a, .blog-item h3 a, .article-item h3 a, .resume-item h3 a {
         color: #00796b;
         text-decoration: none;
       }
 
-      .publication-item h3 a:hover, .blog-item h3 a:hover, .article-item h3 a:hover {
+      .publication-item h3 a:hover, .blog-item h3 a:hover, .article-item h3 a:hover, .resume-item h3 a:hover {
         text-decoration: underline;
       }
 
@@ -160,6 +160,7 @@
         <a href="#blogs" onclick="showSection('blogs')">Blogs</a>
         <a href="#articles" onclick="showSection('articles')">Articles</a>
         <a href="#contact" onclick="showSection('contact')">Contact</a>
+        <a href="#resume" onclick="showSection('resume')">Resume</a>
       </div>
       <img src="somnath.jpg" alt="Somnath Luitel">
       <h1>Somnath Luitel</h1>
@@ -217,6 +218,13 @@
         <p><strong>Summary:</strong> A blog post exploring the rising demand for engineering and the declining quality of education.</p>
       </div>
     </section>
+      <section id="resume" class="section">
+      <h2>Resume</h2>
+      <div class="resume-item">
+        <h3><a href="resume.pdf" target="_blank">View My Resume</a></h3>
+        <p>Click the link above to view or download my resume in PDF format.</p>
+      </div>
+    </section>
 
     <section id="articles" class="section">
       <h2>Articles</h2>
@@ -238,6 +246,7 @@
         </p>
       </div>
     </section>
+
 
     <footer>
       <p>© 2025 Somnath Luitel. All rights reserved.</p>
