@@ -50,6 +50,8 @@
 }
 
 body {
+  position: relative;
+  overflow-x: hidden;
   margin: 0;
   font-family: var(--bs-font-sans-serif);
   font-size: 1rem;
@@ -1947,6 +1949,8 @@ progress {
   box-shadow: inset 0 0 0 9999px var(--bs-table-accent-bg);
 }
 .table > tbody {
+  position: relative;
+  overflow-x: hidden;
   vertical-align: inherit;
 }
 .table > thead {
@@ -4296,6 +4300,8 @@ textarea.form-control-lg {
 }
 
 .card-body {
+  position: relative;
+  overflow-x: hidden;
   flex: 1 1 auto;
   padding: 1rem 1rem;
 }
@@ -4509,6 +4515,8 @@ textarea.form-control-lg {
 }
 
 .accordion-body {
+  position: relative;
+  overflow-x: hidden;
   padding: 1rem 1.25rem;
 }
 
@@ -5227,6 +5235,8 @@ textarea.form-control-lg {
 }
 
 .toast-body {
+  position: relative;
+  overflow-x: hidden;
   padding: 0.75rem;
   word-wrap: break-word;
 }
@@ -5274,6 +5284,8 @@ textarea.form-control-lg {
   overflow: hidden;
 }
 .modal-dialog-scrollable .modal-body {
+  position: relative;
+  overflow-x: hidden;
   overflow-y: auto;
 }
 
@@ -5333,6 +5345,8 @@ textarea.form-control-lg {
 }
 
 .modal-body {
+  position: relative;
+  overflow-x: hidden;
   position: relative;
   flex: 1 1 auto;
   padding: 1rem;
@@ -5397,6 +5411,8 @@ textarea.form-control-lg {
   border-radius: 0;
 }
 .modal-fullscreen .modal-body {
+  position: relative;
+  overflow-x: hidden;
   overflow-y: auto;
 }
 .modal-fullscreen .modal-footer {
@@ -5419,6 +5435,8 @@ textarea.form-control-lg {
     border-radius: 0;
   }
   .modal-fullscreen-sm-down .modal-body {
+  position: relative;
+  overflow-x: hidden;
     overflow-y: auto;
   }
   .modal-fullscreen-sm-down .modal-footer {
@@ -5441,6 +5459,8 @@ textarea.form-control-lg {
     border-radius: 0;
   }
   .modal-fullscreen-md-down .modal-body {
+  position: relative;
+  overflow-x: hidden;
     overflow-y: auto;
   }
   .modal-fullscreen-md-down .modal-footer {
@@ -5463,6 +5483,8 @@ textarea.form-control-lg {
     border-radius: 0;
   }
   .modal-fullscreen-lg-down .modal-body {
+  position: relative;
+  overflow-x: hidden;
     overflow-y: auto;
   }
   .modal-fullscreen-lg-down .modal-footer {
@@ -5485,6 +5507,8 @@ textarea.form-control-lg {
     border-radius: 0;
   }
   .modal-fullscreen-xl-down .modal-body {
+  position: relative;
+  overflow-x: hidden;
     overflow-y: auto;
   }
   .modal-fullscreen-xl-down .modal-footer {
@@ -5507,6 +5531,8 @@ textarea.form-control-lg {
     border-radius: 0;
   }
   .modal-fullscreen-xxl-down .modal-body {
+  position: relative;
+  overflow-x: hidden;
     overflow-y: auto;
   }
   .modal-fullscreen-xxl-down .modal-footer {
@@ -5739,6 +5765,8 @@ textarea.form-control-lg {
 }
 
 .popover-body {
+  position: relative;
+  overflow-x: hidden;
   padding: 1rem 1rem;
   color: #212529;
 }
@@ -6060,6 +6088,8 @@ textarea.form-control-lg {
 }
 
 .offcanvas-body {
+  position: relative;
+  overflow-x: hidden;
   flex-grow: 1;
   padding: 1rem 1rem;
   overflow-y: auto;
@@ -7379,6 +7409,8 @@ textarea.form-control-lg {
 }
 
 .text-body {
+  position: relative;
+  overflow-x: hidden;
   color: #212529 !important;
 }
 
@@ -7431,6 +7463,8 @@ textarea.form-control-lg {
 }
 
 .bg-body {
+  position: relative;
+  overflow-x: hidden;
   background-color: #fff !important;
 }
 
@@ -11099,28 +11133,4 @@ header {
   text-align: center;
   color: white;
   overflow: hidden;
-}
-
-/* Water ripple click effect */
-.ripple {
-  position: absolute;
-  border-radius: 50%;
-  background: rgba(0, 191, 255, 0.4);
-  pointer-events: none;
-  width: 20px;
-  height: 20px;
-  animation: ripple-animation 0.6s linear;
-  transform: translate(-50%, -50%);
-  z-index: 1000;
-}
-
-@keyframes ripple-animation {
-  0% {
-    transform: translate(-50%, -50%) scale(0.5);
-    opacity: 0.8;
-  }
-  100% {
-    transform: translate(-50%, -50%) scale(5);
-    opacity: 0;
-  }
 }
