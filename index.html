@@ -4,9 +4,11 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Somnath Luitel | Civil Engineer</title>
+
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
-  <script src="https://kit.fontawesome.com/77c8b8ef7f.js" crossorigin="anonymous"></script>
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+
   <style>
     body {
       margin: 0;
@@ -14,88 +16,176 @@
       background-color: #e0f7fa;
       color: #004d40;
     }
+
     header {
       background-color: #00bcd4;
-      padding: 60px 20px;
+      padding: 30px 20px;
       text-align: center;
       color: white;
       position: relative;
     }
+
     header img.logo {
       width: 50px;
-      height: auto;
       position: absolute;
       top: 10px;
       left: 10px;
+      border-radius: 50%;
     }
+
     header img {
-      width: 150px;
-      height: 150px;
+      width: 120px;
+      height: 120px;
       border-radius: 50%;
       border: 4px solid white;
-      margin-bottom: 20px;
+      margin-bottom: 15px;
     }
+
     h1 {
-      font-size: 2.5em;
+      font-size: 2em;
       margin: 0;
     }
+
     h2 {
       font-weight: normal;
       margin-top: 10px;
     }
+
     .social-links a {
       margin: 0 10px;
       font-size: 1.5em;
       color: white;
       text-decoration: none;
     }
+
     .section {
       padding: 40px 20px;
       max-width: 1000px;
-      margin: 0 auto;
+      margin: auto;
+      display: none;
     }
-    .section h2 {
-      font-size: 2em;
-      margin-bottom: 20px;
-      color: #006064;
+
+    .section.active {
+      display: block;
     }
-    .publication-item, .blog-item, .article-item, .contact-item, .resume-item {
-      margin-bottom: 20px;
-      background-color: #ffffff;
-      padding: 20px;
-      border-radius: 10px;
-      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+
+    .hamburger {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      font-size: 1.5em;
+      color: white;
+      cursor: pointer;
     }
-    .publication-item h3 a, .blog-item h3 a, .article-item h3 a, .resume-item h3 a {
-      color: #00796b;
+
+    .sidebar {
+      height: 100%;
+      width: 0;
+      position: fixed;
+      top: 0;
+      right: 0;
+      background-color: #006064;
+      overflow-x: hidden;
+      transition: 0.3s;
+      padding-top: 60px;
+      z-index: 1000;
+    }
+
+    .sidebar a {
+      padding: 10px 20px;
+      display: block;
+      color: white;
       text-decoration: none;
     }
-    .publication-item h3 a:hover, .blog-item h3 a:hover, .article-item h3 a:hover, .resume-item h3 a:hover {
-      text-decoration: underline;
+
+    .sidebar a:hover {
+      background-color: #00796b;
     }
+
+    .sidebar .closebtn {
+      position: absolute;
+      top: 20px;
+      right: 25px;
+      font-size: 1.5em;
+    }
+
+    .sidebar.open {
+      width: 250px;
+    }
+
+    .about-section {
+      display: flex;
+      gap: 40px;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: center;
+    }
+
     .swiper {
-      width: 100%;
-      max-width: 400px;
-      height: 300px;
-      border-radius: 10px;
+      width: 500px;
+      height: 340px;
+      border-radius: 12px;
       overflow: hidden;
+      flex-shrink: 0;
     }
+
     .swiper-slide img {
       width: 100%;
       height: 100%;
       object-fit: cover;
     }
+
+    .about-text {
+      flex: 1;
+      min-width: 300px;
+    }
+
     footer {
       background-color: #006064;
       color: white;
       text-align: center;
-      padding: 20px 0;
+      padding: 20px;
+    }
+
+    .content-box {
+      background: white;
+      border-radius: 10px;
+      padding: 20px;
+      margin-bottom: 20px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+
+    .content-box h3 {
+      margin: 0 0 10px;
+      color: #00796b;
+    }
+
+    .content-box a {
+      color: #00796b;
+      text-decoration: none;
+    }
+
+    .content-box a:hover {
+      text-decoration: underline;
     }
   </style>
 </head>
 <body>
+
   <header>
-    <img src="website logo.jpg" alt="S Logo" class="logo">
+    <div class="hamburger" onclick="toggleSidebar()">☰</div>
+    <div id="sidebar" class="sidebar">
+      <a href="javascript:void(0)" class="closebtn" onclick="toggleSidebar()">×</a>
+      <a href="#" onclick="showSection('about')">About Me</a>
+      <a href="#" onclick="showSection('publications')">Publications</a>
+      <a href="#" onclick="showSection('blogs')">Blogs</a>
+      <a href="#" onclick="showSection('articles')">Articles</a>
+      <a href="#" onclick="showSection('resume')">Resume</a>
+      <a href="#" onclick="showSection('contact')">Contact</a>
+      <a href="#" onclick="showSection('social')">Facebook</a>
+    </div>
+
+    <a href="#"><img src="website logo.jpg" alt="S Logo" class="logo"></a>
     <img src="somnath.jpg" alt="Somnath Luitel">
     <h1>Somnath Luitel</h1>
     <h2>Civil Engineer | Water Enthusiast</h2>
@@ -107,99 +197,80 @@
   </header>
 
   <section id="about" class="section active">
-  <div class="about-content" style="display: flex; flex-wrap: wrap; align-items: flex-start; justify-content: center; gap: 40px;">
-
-    <!-- Enlarged Image Slider LEFT -->
-    <div class="swiper" style="width: 500px; height: 350px; border-radius: 12px; overflow: hidden; flex-shrink: 0;">
-      <div class="swiper-wrapper">
-        <div class="swiper-slide"><img src="Appreciation Letter.jpg" style="width: 100%; height: 100%; object-fit: cover;"></div>
-        <div class="swiper-slide"><img src="Mahabharat Gaupalika.jpg" style="width: 100%; height: 100%; object-fit: cover;"></div>
-        <div class="swiper-slide"><img src="Leo Club.jpg" style="width: 100%; height: 100%; object-fit: cover;"></div>
-        <div class="swiper-slide"><img src="DHM Presentation.jpg" style="width: 100%; height: 100%; object-fit: cover;"></div>
+    <div class="about-section">
+      <div class="swiper">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide"><img src="Appreciation Letter.jpg" /></div>
+          <div class="swiper-slide"><img src="Mahabharat Gaupalika.jpg" /></div>
+          <div class="swiper-slide"><img src="Leo Club.jpg" /></div>
+          <div class="swiper-slide"><img src="DHM Presentation.jpg" /></div>
+        </div>
+        <div class="swiper-pagination"></div>
       </div>
-      <div class="swiper-pagination"></div>
+      <div class="about-text">
+        <h2>About Me</h2>
+        <p>I am a passionate civil engineer focused on water resource management and environmental sustainability. Currently working on satellite-based precipitation research and bias correction in Nepal with international collaboration.</p>
+        <p>Founder of <strong>Paani AI</strong>, an initiative using data science to tackle water challenges. Always looking for new opportunities to apply engineering for a better tomorrow.</p>
+      </div>
     </div>
-
-    <!-- Text & Heading RIGHT -->
-    <div class="about-text" style="max-width: 520px; text-align: left;">
-      <h2 style="margin-top: 0;">About Me</h2>
-      <p>
-        I am a passionate civil engineer focused on water resource management and environmental sustainability.
-        Currently working on satellite-based precipitation research and bias correction in Nepal with international collaboration.
-      </p>
-      <p>
-        Founder of <strong>Paani AI</strong>, an initiative using data science to tackle water challenges.
-        Always looking for new opportunities to apply engineering for a better tomorrow.
-      </p>
-    </div>
-    
-  </div>
-</section>
+  </section>
 
   <section id="publications" class="section">
     <h2>Publications</h2>
-    <div class="publication-item">
-      <h3><a href="https://doi.org/10.3126/jsce.v11i01.73526" target="_blank">Flood Hazard Mapping...</a></h3>
-      <p><strong>Authors:</strong> Somnath Luitel et al.<br><strong>Published in:</strong> JScE, 2024</p>
+    <div class="content-box">
+      <h3><a href="https://doi.org/10.3126/jsce.v11i01.73526" target="_blank">Flood Hazard Mapping and Flood Vulnerability Analysis of Building Structures at Settlement-Scale</a></h3>
+      <p><strong>Authors:</strong> Somnath Luitel et al.<br>Published in Journal of Science and Engineering, 2024</p>
     </div>
-    <div class="publication-item">
-      <h3><a href="https://doi.org/10.3126/joetp.v5i1.69649" target="_blank">Assessment of Land Subsidence...</a></h3>
-      <p><strong>Authors:</strong> Somnath Luitel et al.<br><strong>Published in:</strong> JOETP, 2024</p>
+    <div class="content-box">
+      <h3><a href="https://doi.org/10.3126/joetp.v5i1.69649" target="_blank">Assessment of Land Subsidence Pattern in Pokhara Valley Using Sentinel-1 InSAR</a></h3>
+      <p><strong>Authors:</strong> Somnath Luitel et al.<br>Published in JOETP, 2024</p>
     </div>
   </section>
 
   <section id="blogs" class="section">
     <h2>Blogs</h2>
-    <div class="blog-item">
-      <h3><a href="https://www.setopati.com/blog/234969">नेता नै खराब! अनि हामी नि?</a></h3>
-      <p><strong>Summary:</strong> A blog post discussing leadership and societal responsibility.</p>
+    <div class="content-box">
+      <h3><a href="https://www.setopati.com/blog/234969" target="_blank">नेता नै खराब! अनि हामी नि?</a></h3>
+      <p>Discussing leadership and societal responsibility in Nepal.</p>
     </div>
-    <div class="blog-item">
-      <h3><a href="https://www.setopati.com/blog/278939">इन्जिनियरिङको आकाशिँदो माग, खस्कँदो शिक्षा!</a></h3>
-      <p><strong>Summary:</strong> A blog on engineering demand vs. education quality.</p>
+    <div class="content-box">
+      <h3><a href="https://www.setopati.com/blog/278939" target="_blank">इन्जिनियरिङको आकाशिँदो माग, खस्कँदो शिक्षा!</a></h3>
+      <p>Exploring rising demand for engineering vs declining education quality.</p>
     </div>
   </section>
 
   <section id="articles" class="section">
     <h2>Articles</h2>
-    <div class="article-item">
+    <div class="content-box">
       <h3><a href="#">Coming Soon</a></h3>
-      <p><strong>Summary:</strong> Articles on engineering and sustainability topics coming soon.</p>
     </div>
   </section>
 
   <section id="resume" class="section">
     <h2>Resume</h2>
-    <div class="resume-item">
-      <h3><a href="resume.pdf" target="_blank">View My Resume</a></h3>
-      <p>Click above to view or download my resume in PDF format.</p>
+    <div class="content-box">
+      <h3><a href="resume.pdf" target="_blank">Download Resume</a></h3>
     </div>
   </section>
 
   <section id="contact" class="section">
     <h2>Contact</h2>
-    <div class="contact-item">
-      <p><strong>Email:</strong> <a href="mailto:somnathluitel360@gmail.com">somnathluitel360@gmail.com</a><br>
-         <strong>Email:</strong> <a href="mailto:er.somnathluitel@gmail.com">er.somnathluitel@gmail.com</a><br>
-         <strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/somnath-luitel/">Somnath Luitel</a><br>
-         <strong>GitHub:</strong> <a href="https://github.com/shreesomnath">shreesomnath</a>
+    <div class="content-box">
+      <p>Email: <a href="mailto:somnathluitel360@gmail.com">somnathluitel360@gmail.com</a><br>
+         Email: <a href="mailto:er.somnathluitel@gmail.com">er.somnathluitel@gmail.com</a><br>
+         LinkedIn: <a href="https://www.linkedin.com/in/somnath-luitel/" target="_blank">Somnath Luitel</a><br>
+         GitHub: <a href="https://github.com/shreesomnath" target="_blank">shreesomnath</a>
       </p>
     </div>
   </section>
 
   <section id="social" class="section">
-    <h2>Connect with Me</h2>
+    <h2>Facebook Timeline</h2>
     <div id="fb-root"></div>
-    <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v18.0"></script>
-    <div class="fb-page"
-         data-href="https://www.facebook.com/SRSOMNATH"
-         data-tabs="timeline"
-         data-width="500"
-         data-height="500"
-         data-small-header="false"
-         data-adapt-container-width="true"
-         data-hide-cover="false"
-         data-show-facepile="true">
+    <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v18.0" nonce="somnathfb"></script>
+    <div class="fb-page" data-href="https://www.facebook.com/SRSOMNATH" data-tabs="timeline"
+         data-width="" data-height="" data-small-header="false"
+         data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true">
       <blockquote cite="https://www.facebook.com/SRSOMNATH" class="fb-xfbml-parse-ignore">
         <a href="https://www.facebook.com/SRSOMNATH">Somnath Luitel</a>
       </blockquote>
@@ -212,7 +283,19 @@
 
   <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
   <script>
-    var swiper = new Swiper('.swiper', {
+    function toggleSidebar() {
+      document.getElementById("sidebar").classList.toggle("open");
+    }
+
+    function showSection(sectionId) {
+      document.querySelectorAll('.section').forEach(section => {
+        section.classList.remove('active');
+      });
+      document.getElementById(sectionId).classList.add('active');
+      toggleSidebar();
+    }
+
+    new Swiper('.swiper', {
       loop: true,
       pagination: {
         el: '.swiper-pagination',
@@ -223,5 +306,6 @@
       },
     });
   </script>
+
 </body>
 </html>
