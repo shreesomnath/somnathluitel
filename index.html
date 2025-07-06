@@ -157,7 +157,11 @@
         width: 250px;
       }
     </style>
-  </head>
+  
+<!-- Swiper.js CSS -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+
+</head>
   <body>
     <header>
       <div class="hamburger" onclick="toggleSidebar()">☰</div>
@@ -276,27 +280,22 @@
         toggleSidebar();
       }
     </script>
-    <!-- Facebook SDK and Page Plugin -->
-<div id="fb-root"></div>
-<script async defer crossorigin="anonymous"
-        src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v18.0"
-        nonce="somnathfb"></script>
+  
+<!-- Swiper.js JS -->
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 
-<section id="social">
-  <h2>Connect with Me</h2>
-  <div class="fb-page"
-       data-href="https://www.facebook.com/SRSOMNATH"
-       data-tabs="timeline"
-       data-width=""
-       data-height=""
-       data-small-header="false"
-       data-adapt-container-width="true"
-       data-hide-cover="false"
-       data-show-facepile="true">
-    <blockquote cite="https://www.facebook.com/SRSOMNATH" class="fb-xfbml-parse-ignore">
-      <a href="https://www.facebook.com/SRSOMNATH">Somnath Luitel</a>
-    </blockquote>
-  </div>
-</section>
-  </body>
+<script>
+  var swiper = new Swiper('.swiper', {
+    loop: true,
+    pagination: {
+      el: '.swiper-pagination',
+      clickable: true,
+    },
+    autoplay: {
+      delay: 3000,
+    },
+  });
+</script>
+
+</body>
 </html>
