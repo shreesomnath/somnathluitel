@@ -1,53 +1,43 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Somnath Luitel | Civil Engineer</title>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Somnath Luitel</title>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
-  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
   <style>
-    body {
+    * {
+      box-sizing: border-box;
       margin: 0;
-      font-family: 'Roboto', sans-serif;
-      background-color: #e0f7fa;
-      color: #004d40;
+      padding: 0;
     }
-
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #e0f7fa;
+    }
     header {
       background-color: #00bcd4;
-      padding: 40px 20px;
-      text-align: center;
       color: white;
+      text-align: center;
+      padding: 20px 10px;
       position: relative;
     }
-
-    header img {
+    .profile-pic {
       width: 120px;
       height: 120px;
       border-radius: 50%;
+      object-fit: cover;
       border: 3px solid white;
       margin-bottom: 10px;
     }
-
-    h1 {
-      font-size: 2em;
-      margin: 0;
+    .logo {
+      position: absolute;
+      top: 10px;
+      left: 10px;
+      height: 40px;
+      cursor: pointer;
     }
-
-    h2 {
-      font-weight: normal;
-      margin-top: 10px;
-    }
-
-    .social-links a {
-      margin: 0 10px;
-      font-size: 1.4em;
-      color: white;
-      text-decoration: none;
-    }
-
     .hamburger {
       position: absolute;
       top: 15px;
@@ -56,7 +46,6 @@
       color: white;
       cursor: pointer;
     }
-
     .sidebar {
       height: 100%;
       width: 0;
@@ -69,7 +58,6 @@
       padding-top: 60px;
       z-index: 1;
     }
-
     .sidebar a {
       padding: 10px 25px;
       display: block;
@@ -77,189 +65,122 @@
       font-size: 1.2em;
       text-decoration: none;
     }
-
     .sidebar a:hover {
       background-color: #004d40;
     }
-
     .sidebar .closebtn {
       position: absolute;
       top: 15px;
       right: 25px;
       font-size: 1.5em;
     }
-
     .sidebar.open {
       width: 250px;
     }
-
-    .section {
-      display: none;
-      padding: 30px 20px;
-      max-width: 900px;
-      margin: 0 auto;
+    .main {
+      padding: 40px 20px;
+      display: flex;
+      align-items: flex-start;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 40px;
     }
-
-    .section.active {
-      display: block;
-    }
-
     .swiper {
-      width: 100%;
-      max-width: 600px;
-      margin: 20px auto;
+      width: 300px;
+      height: auto;
       border-radius: 10px;
       overflow: hidden;
     }
-
     .swiper-slide img {
       width: 100%;
       height: auto;
     }
-
-    .about-section p {
+    .about-text {
+      max-width: 600px;
       text-align: justify;
-      line-height: 1.6;
     }
-
+    .about-text h2 {
+      margin-bottom: 20px;
+      color: #004d40;
+    }
     footer {
       background-color: #006064;
       color: white;
       text-align: center;
       padding: 20px;
     }
-
-    iframe.fb {
-      width: 100%;
-      border: none;
-      height: 500px;
-    }
   </style>
 </head>
 <body>
-  <header>
-    <div class="hamburger" onclick="toggleSidebar()">☰</div>
-    <div id="sidebar" class="sidebar">
-      <a href="javascript:void(0)" class="closebtn" onclick="toggleSidebar()">×</a>
-      <a href="#about" onclick="showSection('about')">About Me</a>
-      <a href="#publications" onclick="showSection('publications')">Publications</a>
-      <a href="#blogs" onclick="showSection('blogs')">Blogs</a>
-      <a href="#articles" onclick="showSection('articles')">Articles</a>
-      <a href="#contact" onclick="showSection('contact')">Contact</a>
-      <a href="#resume" onclick="showSection('resume')">Resume</a>
-      <a href="#facebook" onclick="showSection('facebook')">Facebook</a>
-    </div>
-    <img src="somnath.jpg" alt="Somnath Luitel">
-    <h1>Somnath Luitel</h1>
-    <h2>Civil Engineer | Water Enthusiast</h2>
-    <div class="social-links">
-      <a href="https://www.linkedin.com/in/somnath-luitel/"><i class="fab fa-linkedin"></i></a>
-      <a href="https://www.facebook.com/SRSOMNATH/"><i class="fab fa-facebook"></i></a>
-      <a href="https://github.com/shreesomnath"><i class="fab fa-github"></i></a>
-    </div>
-  </header>
 
-  <section id="about" class="section active">
+<header>
+  <img src="somnath.jpg" alt="Somnath Luitel" class="profile-pic">
+  <div class="hamburger" onclick="toggleSidebar()">☰</div>
+  <a href="#about"><img src="website logo.jpg" alt="Logo" class="logo"></a>
+  <h1>Somnath Luitel</h1>
+  <p>Civil Engineer | Water Enthusiast</p>
+</header>
+
+<div id="sidebar" class="sidebar">
+  <a href="javascript:void(0)" class="closebtn" onclick="toggleSidebar()">×</a>
+  <a href="#about" onclick="showSection('about')">About Me</a>
+  <a href="#resume" onclick="showSection('resume')">Resume</a>
+  <a href="#projects" onclick="showSection('projects')">Projects</a>
+  <a href="#publications" onclick="showSection('publications')">Publications</a>
+  <a href="#articles" onclick="showSection('articles')">Articles</a>
+  <a href="#contact" onclick="showSection('contact')">Contact</a>
+</div>
+
+<div class="main" id="about">
+  <div class="swiper">
+    <div class="swiper-wrapper">
+      <div class="swiper-slide"><img src="DHM Presentation.jpg" alt="Slide 1"></div>
+      <div class="swiper-slide"><img src="Mahabharat Gaupalika.jpg" alt="Slide 2"></div>
+      <div class="swiper-slide"><img src="Leo Club.jpg" alt="Slide 3"></div>
+      <div class="swiper-slide"><img src="Appreciation Letter.jpg" alt="Slide 4"></div>
+      <div class="swiper-slide"><img src="Library Reading.jpg" alt="Slide 5"></div>
+      <div class="swiper-slide"><img src="Environment Day.jpg" alt="Slide 6"></div>
+    </div>
+    <div class="swiper-pagination"></div>
+  </div>
+  <div class="about-text">
     <h2>About Me</h2>
-    <div class="about-section">
-      <p>I am a passionate civil engineer focused on water resource management and environmental sustainability.</p>
-      <p>Founder of <a href="https://paaniai.org/" target="_blank" style="color:#00796b; font-weight:bold;">Paani AI</a>, an initiative using data science to tackle water challenges. Always looking for new opportunities to apply engineering for a better tomorrow.</p>
-      <p>I'm from Morang, Nepal, part of the Terai region often called the Golden Land because of its fertile soil and deep connection to agriculture. Growing up, I saw how vital water is for farming and daily life, and how often it's poorly managed. That's where my dream started — to do something real and useful in Nepal's water sector.</p>
-      <p>I also love to travel, write, and spend time with people, listening to their stories and learning from their lives.</p>
-    </div>
+    <p>I am a passionate civil engineer focused on water resource management and environmental sustainability.</p>
+    <p>Founder of <a href="https://paaniai.org/" target="_blank" style="color:#00796b; font-weight:bold;">Paani AI</a>, an initiative using data science to tackle water challenges. Always looking for new opportunities to apply engineering for a better tomorrow.</p>
+    <p>I'm from Morang, Nepal, part of the Terai region often called the Golden Land because of its fertile soil and deep connection to agriculture. Growing up, I saw how vital water is for farming and daily life, and how often it's poorly managed. That's where my dream started — to do something real and useful in Nepal's water sector.</p>
+    <p>I also love to travel, write, and spend time with people, listening to their stories and learning from their lives.</p>
+  </div>
+</div>
 
-    <!-- Slider -->
-    <div class="swiper">
-      <div class="swiper-wrapper">
-        <div class="swiper-slide"><img src="DHM Presentation.jpg" alt="Slide 1"></div>
-        <div class="swiper-slide"><img src="Mahabharat Gaupalika.jpg" alt="Slide 2"></div>
-        <div class="swiper-slide"><img src="Leo Club.jpg" alt="Slide 3"></div>
-        <div class="swiper-slide"><img src="Appreciation Letter.jpg" alt="Slide 4"></div>
-        <div class="swiper-slide"><img src="Library Reading.jpg" alt="Slide 5"></div>
-        <div class="swiper-slide"><img src="Environment Day.jpg" alt="Slide 6"></div>
-      </div>
-      <div class="swiper-pagination"></div>
-    </div>
-  </section>
+<footer>
+  <p>© 2025 Somnath Luitel. All rights reserved.</p>
+</footer>
 
-  <section id="publications" class="section">
-    <h2>Publications</h2>
-    <p><a href="https://doi.org/10.3126/jsce.v11i01.73526" target="_blank">Flood Hazard Mapping and Flood Vulnerability Analysis</a></p>
-    <p><a href="https://doi.org/10.3126/joetp.v5i1.69649" target="_blank">Assessment of Land Subsidence Pattern Using InSAR</a></p>
-  </section>
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+<script>
+  function toggleSidebar() {
+    document.getElementById("sidebar").classList.toggle("open");
+  }
 
-  <section id="blogs" class="section">
-    <h2>Blogs</h2>
-    <p><a href="https://www.setopati.com/blog/234969" target="_blank">नेता नै खराब! अनि हामी नि?</a></p>
-    <p><a href="https://www.setopati.com/blog/278939" target="_blank">इन्जिनियरिङको आकाशिँदो माग, खस्कँदो शिक्षा!</a></p>
-  </section>
+  function showSection(id) {
+    const sections = document.querySelectorAll('.section');
+    sections.forEach(section => section.style.display = 'none');
+    const target = document.getElementById(id);
+    if (target) target.style.display = 'block';
+    toggleSidebar();
+  }
 
-  <section id="articles" class="section">
-    <h2>Articles</h2>
-    <p>Coming Soon</p>
-  </section>
+  new Swiper('.swiper', {
+    loop: true,
+    pagination: {
+      el: '.swiper-pagination',
+      clickable: true
+    },
+    autoplay: {
+      delay: 3000,
+    },
+  });
+</script>
 
-  <section id="resume" class="section">
-    <h2>Resume</h2>
-    <p><a href="resume.pdf" target="_blank">Download Resume (PDF)</a></p>
-  </section>
-
-  <section id="contact" class="section">
-    <h2>Contact</h2>
-    <p>Email: <a href="mailto:somnathluitel360@gmail.com">somnathluitel360@gmail.com</a></p>
-    <p>Email: <a href="mailto:er.somnathluitel@gmail.com">er.somnathluitel@gmail.com</a></p>
-    <p>LinkedIn: <a href="https://www.linkedin.com/in/somnath-luitel/" target="_blank">Somnath Luitel</a></p>
-    <p>GitHub: <a href="https://github.com/shreesomnath" target="_blank">shreesomnath</a></p>
-  </section>
-
-  <section id="facebook" class="section">
-    <h2>Facebook Timeline</h2>
-    <div id="fb-root"></div>
-    <script async defer crossorigin="anonymous"
-      src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v18.0"></script>
-    <div class="fb-page"
-      data-href="https://www.facebook.com/SRSOMNATH"
-      data-tabs="timeline"
-      data-width=""
-      data-height=""
-      data-small-header="false"
-      data-adapt-container-width="true"
-      data-hide-cover="false"
-      data-show-facepile="true">
-      <blockquote cite="https://www.facebook.com/SRSOMNATH" class="fb-xfbml-parse-ignore">
-        <a href="https://www.facebook.com/SRSOMNATH">Somnath Luitel</a>
-      </blockquote>
-    </div>
-  </section>
-
-  <footer>
-    <p>© 2025 Somnath Luitel. All rights reserved.</p>
-  </footer>
-
-  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-  <script>
-    function toggleSidebar() {
-      document.getElementById("sidebar").classList.toggle("open");
-    }
-
-    function showSection(sectionId) {
-      document.querySelectorAll('.section').forEach(section => {
-        section.classList.remove('active');
-      });
-      document.getElementById(sectionId).classList.add('active');
-      toggleSidebar();
-    }
-
-    new Swiper('.swiper', {
-      loop: true,
-      pagination: {
-        el: '.swiper-pagination',
-        clickable: true,
-      },
-      autoplay: {
-        delay: 3000,
-      },
-    });
-  </script>
 </body>
 </html>
