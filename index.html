@@ -3,101 +3,88 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Somnath Luitel | Civil Engineer</title>
+  <title>Somnath Luitel</title>
   <link rel="stylesheet" href="style.css" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet" />
-  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
   <style>
-    body {
-      font-family: 'Roboto', sans-serif;
+    * {
+      box-sizing: border-box;
       margin: 0;
       padding: 0;
+    }
+    body {
+      font-family: Arial, sans-serif;
       background-color: #e0f7fa;
     }
     header {
       background-color: #00bcd4;
+      color: white;
       text-align: center;
-      padding: 2rem 1rem 3rem 1rem;
+      padding: 30px 10px;
       position: relative;
     }
-    header img.logo {
+    .logo {
       position: absolute;
-      left: 1rem;
-      top: 1rem;
-      width: 40px;
-      height: 40px;
+      top: 10px;
+      left: 10px;
+      height: 50px;
       cursor: pointer;
     }
-    header img.logo:hover {
-      opacity: 0.8;
+    nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 200px;
+      height: 100%;
+      background-color: #004d40;
+      padding-top: 60px;
     }
-    header img.profile-pic {
-      width: 120px;
-      height: 120px;
-      border-radius: 50%;
-      border: 4px solid white;
-    }
-    header h1 {
-      margin-top: 1rem;
+    nav a {
+      display: block;
       color: white;
-      font-size: 2rem;
+      padding: 10px 20px;
+      text-decoration: none;
     }
-    header p {
+    nav a:hover {
+      background-color: #00695c;
+    }
+    .main {
+      margin-left: 200px;
+      padding: 20px;
+    }
+    .social-icons {
+      margin-top: 15px;
+    }
+    .social-icons a {
       color: white;
-      margin-bottom: 1rem;
+      margin: 0 10px;
+      font-size: 20px;
     }
-    .social-icons i {
-      font-size: 1.5rem;
-      color: white;
-      margin: 0 0.5rem;
-    }
-    .container {
+    .about-section {
       display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
       align-items: center;
-      padding: 2rem;
-      background-color: #e0f7fa;
+      justify-content: center;
+      gap: 40px;
+      padding: 40px 20px;
     }
-    .carousel {
-      flex: 1 1 400px;
-      text-align: center;
-    }
-    .carousel img {
-      width: 90%;
-      max-width: 500px;
-      height: auto;
+    .about-section img {
+      max-width: 400px;
       border-radius: 10px;
     }
     .about-text {
-      flex: 1 1 400px;
-      padding: 1rem;
+      max-width: 600px;
+      text-align: justify;
     }
     .about-text h2 {
+      margin-bottom: 20px;
       color: #004d40;
-    }
-    .about-text p {
-      text-align: justify;
-      line-height: 1.6;
-    }
-    .about-text a {
-      color: #00796b;
-      font-weight: bold;
-      text-decoration: none;
-    }
-    @media screen and (max-width: 768px) {
-      .container {
-        flex-direction: column;
-      }
     }
   </style>
 </head>
 <body>
+
   <header>
     <a href="#about"><img src="logo.png" alt="Logo" class="logo"></a>
-    <img src="profile.jpg" alt="Somnath Luitel" class="profile-pic" />
     <h1>Somnath Luitel</h1>
     <p>Civil Engineer | Water Enthusiast</p>
     <div class="social-icons">
@@ -107,19 +94,27 @@
     </div>
   </header>
 
-  <section id="about" class="container">
-    <div class="carousel">
-      <img src="Library Reading.jpg" alt="Image 1" />
-    </div>
-    <div class="about-text">
-      <h2>About Me</h2>
-      <p>I am a passionate civil engineer focused on water resource management and environmental sustainability.</p>
-      <p>Founder of <a href="https://paaniai.org/" target="_blank">Paani AI</a>, an initiative using data science to tackle water challenges. Always looking for new opportunities to apply engineering for a better tomorrow.</p>
-      <p>I'm from Morang, Nepal, part of the Terai region often called the Golden Land because of its fertile soil and deep connection to agriculture. Growing up, I saw how vital water is for farming and daily life, and how often it’s poorly managed. That’s where my dream started — to do something real and useful in Nepal's water sector.</p>
-      <p>I also love to travel, write, and spend time with people, listening to their stories and learning from their lives.</p>
-    </div>
-  </section>
+  <nav>
+    <a href="#about">About Me</a>
+    <a href="#resume">Resume</a>
+    <a href="#projects">Projects</a>
+    <a href="#publications">Publications</a>
+    <a href="#articles">Articles</a>
+    <a href="#contact">Contact</a>
+  </nav>
 
+  <div class="main">
+    <section id="about" class="about-section">
+      <img src="DHM Presentation.jpg" alt="About Me Image" />
+      <div class="about-text">
+        <h2>About Me</h2>
+        <p>I am a passionate civil engineer focused on water resource management and environmental sustainability.</p>
+        <p>Founder of <a href="https://paaniai.org/" target="_blank" style="color:#00796b; font-weight:bold;">Paani AI</a>, an initiative using data science to tackle water challenges. Always looking for new opportunities to apply engineering for a better tomorrow.</p>
+        <p>I'm from Morang, Nepal, part of the Terai region often called the Golden Land because of its fertile soil and deep connection to agriculture. Growing up, I saw how vital water is for farming and daily life, and how often it's poorly managed. That's where my dream started — to do something real and useful in Nepal's water sector.</p>
+        <p>I also love to travel, write, and spend time with people, listening to their stories and learning from their lives.</p>
+      </div>
+    </section>
+    
   <section id="publications" class="section">
     <h2>Publications</h2>
     <div class="content-box">
