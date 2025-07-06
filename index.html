@@ -1,155 +1,122 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Somnath Luitel | Civil Engineer</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet" />
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
   <style>
     body {
+      font-family: 'Roboto', sans-serif;
       margin: 0;
-      font-family: Arial, sans-serif;
+      padding: 0;
       background-color: #e0f7fa;
-      color: #004d40;
     }
-
     header {
       background-color: #00bcd4;
-      padding: 40px 20px 80px 20px;
       text-align: center;
-      color: white;
+      padding: 2rem 1rem 3rem 1rem;
+      position: relative;
     }
-
     header img.logo {
-      width: 50px;
-      height: 50px;
-      border-radius: 50%;
       position: absolute;
-      top: 10px;
-      left: 10px;
+      left: 1rem;
+      top: 1rem;
+      width: 40px;
+      height: 40px;
       cursor: pointer;
     }
-
-    .profile-pic {
-      width: 130px;
-      height: 130px;
+    header img.logo:hover {
+      opacity: 0.8;
+    }
+    header img.profile-pic {
+      width: 120px;
+      height: 120px;
       border-radius: 50%;
-      margin-bottom: 10px;
-      border: 5px solid white;
+      border: 4px solid white;
     }
-
-    .social-icons a {
-      margin: 0 10px;
+    header h1 {
+      margin-top: 1rem;
       color: white;
-      font-size: 24px;
-      text-decoration: none;
+      font-size: 2rem;
     }
-
-    .section {
-      padding: 40px 20px;
+    header p {
+      color: white;
+      margin-bottom: 1rem;
     }
-
-    .about-section {
+    .social-icons i {
+      font-size: 1.5rem;
+      color: white;
+      margin: 0 0.5rem;
+    }
+    .container {
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
       align-items: center;
-      gap: 40px;
+      padding: 2rem;
+      background-color: #e0f7fa;
     }
-
-    .slider-container {
-      flex: 1;
-      max-width: 500px;
-      border-radius: 15px;
-      overflow: hidden;
-    }
-
-    .about-text {
-      flex: 1;
-      max-width: 600px;
-      text-align: justify;
-    }
-
     .carousel {
-      position: relative;
-      width: 100%;
-    }
-
-    .carousel img {
-      width: 100%;
-      height: auto;
-      display: block;
-    }
-
-    .dots {
+      flex: 1 1 400px;
       text-align: center;
     }
-
-    .dot {
-      height: 10px;
-      width: 10px;
-      margin: 5px 3px;
-      background-color: #bbb;
-      border-radius: 50%;
-      display: inline-block;
-      transition: background-color 0.6s ease;
+    .carousel img {
+      width: 90%;
+      max-width: 500px;
+      height: auto;
+      border-radius: 10px;
     }
-
-    .active {
-      background-color: #00796b;
+    .about-text {
+      flex: 1 1 400px;
+      padding: 1rem;
     }
-
-    a {
+    .about-text h2 {
+      color: #004d40;
+    }
+    .about-text p {
+      text-align: justify;
+      line-height: 1.6;
+    }
+    .about-text a {
       color: #00796b;
+      font-weight: bold;
+      text-decoration: none;
     }
-
-    /* Additional sections can be added below this comment */
+    @media screen and (max-width: 768px) {
+      .container {
+        flex-direction: column;
+      }
+    }
   </style>
 </head>
-
 <body>
-  <img src="logo.png" alt="Logo" class="logo" onclick="window.location.href='#about'">
   <header>
-    <img src="profile.jpg" alt="Somnath Luitel" class="profile-pic">
+    <a href="#about"><img src="logo.png" alt="Logo" class="logo"></a>
+    <img src="profile.jpg" alt="Somnath Luitel" class="profile-pic" />
     <h1>Somnath Luitel</h1>
     <p>Civil Engineer | Water Enthusiast</p>
     <div class="social-icons">
-      <a href="https://www.linkedin.com/in/srsomnath" target="_blank"><i class="fab fa-linkedin"></i></a>
-      <a href="https://www.facebook.com/SRSOMNATH" target="_blank"><i class="fab fa-facebook"></i></a>
-      <a href="https://github.com/SRSOMNATH" target="_blank"><i class="fab fa-github"></i></a>
+      <a href="https://linkedin.com/in/somnathluitel" target="_blank"><i class="fab fa-linkedin"></i></a>
+      <a href="https://facebook.com/somnathluitel" target="_blank"><i class="fab fa-facebook"></i></a>
+      <a href="https://github.com/somnathluitel" target="_blank"><i class="fab fa-github"></i></a>
     </div>
   </header>
 
-  <section id="about" class="section">
-    <div class="about-section">
-      <div class="slider-container">
-        <div class="carousel">
-          <img class="slides" src="slider1.jpg" alt="Image 1">
-          <img class="slides" src="slider2.jpg" alt="Image 2" style="display:none">
-          <img class="slides" src="slider3.jpg" alt="Image 3" style="display:none">
-        </div>
-        <div class="dots">
-          <span class="dot active" onclick="currentSlide(0)"></span>
-          <span class="dot" onclick="currentSlide(1)"></span>
-          <span class="dot" onclick="currentSlide(2)"></span>
-        </div>
-      </div>
-
-      <div class="about-text">
-        <h2>About Me</h2>
-        <p>I am a passionate civil engineer focused on water resource management and environmental sustainability.</p>
-        <p>
-          Founder of <a href="https://paaniai.org/" target="_blank"><strong>Paani AI</strong></a>,
-          an initiative using data science to tackle water challenges. Always looking for new opportunities to apply engineering for a better tomorrow.
-        </p>
-        <p>
-          I'm from Morang, Nepal, part of the Terai region often called the Golden Land because of its fertile soil and deep connection to agriculture. Growing up, I saw how vital water is for farming and daily life, and how often it's poorly managed. That's where my dream started — to do something real and useful in Nepal's water sector.
-        </p>
-        <p>
-          I also love to travel, write, and spend time with people, listening to their stories and learning from their lives.
-        </p>
-      </div>
+  <section id="about" class="container">
+    <div class="carousel">
+      <img src="Library Reading.jpg" alt="Image 1" />
+    </div>
+    <div class="about-text">
+      <h2>About Me</h2>
+      <p>I am a passionate civil engineer focused on water resource management and environmental sustainability.</p>
+      <p>Founder of <a href="https://paaniai.org/" target="_blank">Paani AI</a>, an initiative using data science to tackle water challenges. Always looking for new opportunities to apply engineering for a better tomorrow.</p>
+      <p>I'm from Morang, Nepal, part of the Terai region often called the Golden Land because of its fertile soil and deep connection to agriculture. Growing up, I saw how vital water is for farming and daily life, and how often it’s poorly managed. That’s where my dream started — to do something real and useful in Nepal's water sector.</p>
+      <p>I also love to travel, write, and spend time with people, listening to their stories and learning from their lives.</p>
     </div>
   </section>
 
