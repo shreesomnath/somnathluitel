@@ -2,19 +2,16 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Somnath Luitel</title>
-  <link rel="stylesheet" href="style.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
   <style>
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
     body {
       font-family: Arial, sans-serif;
       background-color: #e0f7fa;
+      display: flex;
+      min-height: 100vh;
     }
     header {
       background-color: #00bcd4;
@@ -22,12 +19,20 @@
       text-align: center;
       padding: 30px 10px;
       position: relative;
+      width: 100%;
     }
     .logo {
       position: absolute;
       top: 10px;
       left: 10px;
       height: 50px;
+      cursor: pointer;
+    }
+    .menu-toggle {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      font-size: 24px;
       cursor: pointer;
     }
     nav {
@@ -38,6 +43,7 @@
       height: 100%;
       background-color: #004d40;
       padding-top: 60px;
+      transition: transform 0.3s ease;
     }
     nav a {
       display: block;
@@ -51,6 +57,7 @@
     .main {
       margin-left: 200px;
       padding: 20px;
+      width: calc(100% - 200px);
     }
     .social-icons {
       margin-top: 15px;
@@ -66,6 +73,7 @@
       justify-content: center;
       gap: 40px;
       padding: 40px 20px;
+      flex-wrap: wrap;
     }
     .about-section img {
       max-width: 400px;
@@ -79,22 +87,35 @@
       margin-bottom: 20px;
       color: #004d40;
     }
+    .section {
+      padding: 40px 20px;
+    }
+    .content-box {
+      margin-bottom: 20px;
+    }
+    footer {
+      text-align: center;
+      padding: 20px;
+      background-color: #004d40;
+      color: white;
+    }
+    @media screen and (max-width: 768px) {
+      nav {
+        transform: translateX(-100%);
+      }
+      nav.open {
+        transform: translateX(0);
+      }
+      .main {
+        margin-left: 0;
+        width: 100%;
+      }
+    }
   </style>
 </head>
 <body>
 
-  <header>
-    <a href="#about"><img src="logo.png" alt="Logo" class="logo"></a>
-    <h1>Somnath Luitel</h1>
-    <p>Civil Engineer | Water Enthusiast</p>
-    <div class="social-icons">
-      <a href="https://linkedin.com/in/somnathluitel" target="_blank"><i class="fab fa-linkedin"></i></a>
-      <a href="https://facebook.com/somnathluitel" target="_blank"><i class="fab fa-facebook"></i></a>
-      <a href="https://github.com/somnathluitel" target="_blank"><i class="fab fa-github"></i></a>
-    </div>
-  </header>
-
-  <nav>
+  <nav id="sidebar">
     <a href="#about">About Me</a>
     <a href="#resume">Resume</a>
     <a href="#projects">Projects</a>
@@ -104,107 +125,85 @@
   </nav>
 
   <div class="main">
+    <header>
+      <img src="website logo.jpg" alt="Logo" class="logo">
+      <i class="fas fa-ellipsis-v menu-toggle" onclick="toggleSidebar()"></i>
+      <h1>Somnath Luitel</h1>
+      <p>Civil Engineer | Water Enthusiast</p>
+      <div class="social-icons">
+        <a href="https://linkedin.com/in/somnathluitel" target="_blank"><i class="fab fa-linkedin"></i></a>
+        <a href="https://facebook.com/somnathluitel" target="_blank"><i class="fab fa-facebook"></i></a>
+        <a href="https://github.com/somnathluitel" target="_blank"><i class="fab fa-github"></i></a>
+      </div>
+    </header>
+
     <section id="about" class="about-section">
-      <img src="DHM Presentation.jpg" alt="About Me Image" />
+      <img src="somnath.jpg" alt="About Me Image" />
       <div class="about-text">
         <h2>About Me</h2>
         <p>I am a passionate civil engineer focused on water resource management and environmental sustainability.</p>
         <p>Founder of <a href="https://paaniai.org/" target="_blank" style="color:#00796b; font-weight:bold;">Paani AI</a>, an initiative using data science to tackle water challenges. Always looking for new opportunities to apply engineering for a better tomorrow.</p>
-        <p>I'm from Morang, Nepal, part of the Terai region often called the Golden Land because of its fertile soil and deep connection to agriculture. Growing up, I saw how vital water is for farming and daily life, and how often it's poorly managed. That's where my dream started — to do something real and useful in Nepal's water sector.</p>
+        <p>I'm from Morang, Nepal, part of the Terai region often called the Golden Land because of its fertile soil and deep connection to agriculture. Growing up, I saw how vital water is for farming and daily life, and how often it's poorly managed. That's where my dream started—to do something real and useful in Nepal's water sector.</p>
         <p>I also love to travel, write, and spend time with people, listening to their stories and learning from their lives.</p>
       </div>
     </section>
-    
-  <section id="publications" class="section">
-    <h2>Publications</h2>
-    <div class="content-box">
-      <h3><a href="https://doi.org/10.3126/jsce.v11i01.73526" target="_blank">Flood Hazard Mapping and Flood Vulnerability Analysis of Building Structures at Settlement-Scale</a></h3>
-      <p><strong>Authors:</strong> Somnath Luitel et al.<br>Published in Journal of Science and Engineering, 2024</p>
-    </div>
-    <div class="content-box">
-      <h3><a href="https://doi.org/10.3126/joetp.v5i1.69649" target="_blank">Assessment of Land Subsidence Pattern in Pokhara Valley Using Sentinel-1 InSAR</a></h3>
-      <p><strong>Authors:</strong> Somnath Luitel et al.<br>Published in JOETP, 2024</p>
-    </div>
-  </section>
 
-  <section id="blogs" class="section">
-    <h2>Blogs</h2>
-    <div class="content-box">
-      <h3><a href="https://www.setopati.com/blog/234969" target="_blank">नेता नै खराब! अनि हामी नि?</a></h3>
-      <p>Discussing leadership and societal responsibility in Nepal.</p>
-    </div>
-    <div class="content-box">
-      <h3><a href="https://www.setopati.com/blog/278939" target="_blank">इन्जिनियरिङको आकाशिँदो माग, खस्कँदो शिक्षा!</a></h3>
-      <p>Exploring rising demand for engineering vs declining education quality.</p>
-    </div>
-  </section>
+    <section id="resume" class="section">
+      <h2>Resume</h2>
+      <div class="content-box">
+        <h3><a href="resume.pdf" target="_blank">Download Resume</a></h3>
+      </div>
+    </section>
 
-  <section id="articles" class="section">
-    <h2>Articles</h2>
-    <div class="content-box">
-      <h3><a href="#">Coming Soon</a></h3>
-    </div>
-  </section>
+    <section id="publications" class="section">
+      <h2>Publications</h2>
+      <div class="content-box">
+        <h3><a href="https://doi.org/10.3126/jsce.v11i01.73526" target="_blank">Flood Hazard Mapping and Flood Vulnerability Analysis</a></h3>
+        <p><strong>Authors:</strong> Somnath Luitel et al.<br>Published in Journal of Science and Engineering, 2024</p>
+      </div>
+      <div class="content-box">
+        <h3><a href="https://doi.org/10.3126/joetp.v5i1.69649" target="_blank">Assessment of Land Subsidence in Pokhara Using InSAR</a></h3>
+        <p><strong>Authors:</strong> Somnath Luitel et al.<br>Published in JOETP, 2024</p>
+      </div>
+    </section>
 
-  <section id="resume" class="section">
-    <h2>Resume</h2>
-    <div class="content-box">
-      <h3><a href="resume.pdf" target="_blank">Download Resume</a></h3>
-    </div>
-  </section>
+    <section id="articles" class="section">
+      <h2>Articles</h2>
+      <div class="content-box"><h3><a href="#">Coming Soon</a></h3></div>
+    </section>
 
-  <section id="contact" class="section">
-    <h2>Contact</h2>
-    <div class="content-box">
-      <p>Email: <a href="mailto:somnathluitel360@gmail.com">somnathluitel360@gmail.com</a><br>
-         Email: <a href="mailto:er.somnathluitel@gmail.com">er.somnathluitel@gmail.com</a><br>
-         LinkedIn: <a href="https://www.linkedin.com/in/somnath-luitel/" target="_blank">Somnath Luitel</a><br>
-         GitHub: <a href="https://github.com/shreesomnath" target="_blank">shreesomnath</a>
-      </p>
-    </div>
-  </section>
+    <section id="contact" class="section">
+      <h2>Contact</h2>
+      <div class="content-box">
+        <p>Email: <a href="mailto:somnathluitel360@gmail.com">somnathluitel360@gmail.com</a><br>
+           Email: <a href="mailto:er.somnathluitel@gmail.com">er.somnathluitel@gmail.com</a><br>
+           LinkedIn: <a href="https://www.linkedin.com/in/somnath-luitel/" target="_blank">Somnath Luitel</a><br>
+           GitHub: <a href="https://github.com/shreesomnath" target="_blank">shreesomnath</a></p>
+      </div>
+    </section>
 
-  <section id="social" class="section">
-    <h2>Facebook Timeline</h2>
-    <div id="fb-root"></div>
-    <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v18.0" nonce="somnathfb"></script>
-    <div class="fb-page" data-href="https://www.facebook.com/SRSOMNATH" data-tabs="timeline"
-         data-width="" data-height="" data-small-header="false"
-         data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true">
-      <blockquote cite="https://www.facebook.com/SRSOMNATH" class="fb-xfbml-parse-ignore">
-        <a href="https://www.facebook.com/SRSOMNATH">Somnath Luitel</a>
-      </blockquote>
-    </div>
-  </section>
+    <section id="social" class="section">
+      <h2>Facebook Timeline</h2>
+      <div id="fb-root"></div>
+      <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v18.0" nonce="somnathfb"></script>
+      <div class="fb-page" data-href="https://www.facebook.com/SRSOMNATH" data-tabs="timeline"
+           data-width="" data-height="" data-small-header="false"
+           data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true">
+        <blockquote cite="https://www.facebook.com/SRSOMNATH" class="fb-xfbml-parse-ignore">
+          <a href="https://www.facebook.com/SRSOMNATH">Somnath Luitel</a>
+        </blockquote>
+      </div>
+    </section>
 
-  <footer>
-    <p>© 2025 Somnath Luitel. All rights reserved.</p>
-  </footer>
+    <footer>
+      <p>© 2025 Somnath Luitel. All rights reserved.</p>
+    </footer>
+  </div>
 
-  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
   <script>
     function toggleSidebar() {
       document.getElementById("sidebar").classList.toggle("open");
     }
-
-    function showSection(sectionId) {
-      document.querySelectorAll('.section').forEach(section => {
-        section.classList.remove('active');
-      });
-      document.getElementById(sectionId).classList.add('active');
-      toggleSidebar();
-    }
-
-    new Swiper('.swiper', {
-      loop: true,
-      pagination: {
-        el: '.swiper-pagination',
-        clickable: true,
-      },
-      autoplay: {
-        delay: 3000,
-      },
-    });
   </script>
 
 </body>
