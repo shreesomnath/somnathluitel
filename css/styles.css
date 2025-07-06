@@ -206,3 +206,27 @@ footer {
     align-items: center;
   }
 }
+
+.about-image-slider {
+  flex: 0 0 400px;
+  max-width: 100%;
+}
+
+.main.section.active {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 40px;
+  max-width: 1200px;
+  margin: auto;
+  padding: 60px 20px;
+}
+
+@media (max-width: 768px) {
+  .main.section.active {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
