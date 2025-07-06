@@ -103,6 +103,13 @@
       margin-bottom: 20px;
       color: #004d40;
     }
+    .section {
+      display: none;
+      padding: 40px 20px;
+    }
+    .section.active {
+      display: block;
+    }
     footer {
       background-color: #006064;
       color: white;
@@ -131,7 +138,7 @@
   <a href="#contact" onclick="showSection('contact')">Contact</a>
 </div>
 
-<div class="main" id="about">
+<div class="main section active" id="about">
   <div class="swiper">
     <div class="swiper-wrapper">
       <div class="swiper-slide"><img src="DHM Presentation.jpg" alt="Slide 1"></div>
@@ -152,6 +159,72 @@
   </div>
 </div>
 
+<section id="resume" class="section">
+  <h2>Resume</h2>
+  <div class="resume-item">
+    <h3><a href="resume.pdf" target="_blank">View My Resume</a></h3>
+    <p>Click the link above to view or download my resume in PDF format.</p>
+  </div>
+</section>
+
+<section id="publications" class="section">
+  <h2>Publications</h2>
+  <div class="publication-item">
+    <h3><a href="https://doi.org/10.3126/jsce.v11i01.73526" target="_blank">Flood Hazard Mapping and Flood Vulnerability Analysis of Building Structures at Settlement-Scale</a></h3>
+    <p><strong>Authors:</strong> Somnath Luitel, S. Lamichhane, N. Devkota, H. P. Poudel<br>
+    <strong>Published in:</strong> Journal of Science and Engineering (JScE), Volume 11, 2024</p>
+  </div>
+  <div class="publication-item">
+    <h3><a href="https://doi.org/10.3126/joetp.v5i1.69649" target="_blank">Assessment of Land Subsidence Pattern in Pokhara Valley Using Sentinel-1 InSAR Processing</a></h3>
+    <p><strong>Authors:</strong> Somnath Luitel, S. Ghimire, S. Chaulagain, S. Sah, D. K. Thapa, and S. Lamichhane<br>
+    <strong>Published in:</strong> Journal of Engineering Technology and Planning (JOETP), vol. 5, no. 1, pp. 27–37, 2024</p>
+  </div>
+</section>
+
+<section id="blogs" class="section">
+  <h2>Blogs</h2>
+  <h3 class="subsection">Academic Blogs</h3>
+  <div class="blog-item">
+    <h3><a href="#" target="_blank">Coming Soon</a></h3>
+    <p><strong>Summary:</strong> Academic blog posts on water resource management and data science applications will be added soon.</p>
+  </div>
+  <h3 class="subsection">English Blogs</h3>
+  <div class="blog-item">
+    <h3><a href="#" target="_blank">Coming Soon</a></h3>
+    <p><strong>Summary:</strong> English blog posts on civil engineering and sustainability topics will be added soon.</p>
+  </div>
+  <h3 class="subsection">Nepali Blogs</h3>
+  <div class="blog-item">
+    <h3><a href="https://www.setopati.com/blog/234969" target="_blank">नेता नै खराब! अनि हामी नि?</a></h3>
+    <p><strong>Summary:</strong> A blog post discussing leadership and societal responsibility.</p>
+  </div>
+  <div class="blog-item">
+    <h3><a href="https://www.setopati.com/blog/278939" target="_blank">इन्जिनियरिङको आकाशिँदो माग, खस्कँदो शिक्षा!</a></h3>
+    <p><strong>Summary:</strong> A blog post exploring the rising demand for engineering and the declining quality of education.</p>
+  </div>
+</section>
+
+<section id="articles" class="section">
+  <h2>Articles</h2>
+  <div class="article-item">
+    <h3><a href="#" target="_blank">Coming Soon</a></h3>
+    <p><strong>Summary:</strong> Articles on civil engineering and sustainability topics will be added soon.</p>
+  </div>
+</section>
+
+<section id="contact" class="section">
+  <h2>Contact</h2>
+  <div class="contact-item">
+    <h3>Contact Information</h3>
+    <p>
+      <strong>Email:</strong> ✉️ <a href="mailto:somnathluitel360@gmail.com">somnathluitel360@gmail.com</a><br>
+      <strong>Email:</strong> ✉️ <a href="mailto:er.somnathluitel@gmail.com">er.somnathluitel@gmail.com</a><br>
+      <strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/somnath-luitel/" target="_blank">Somnath Luitel</a><br>
+      <strong>GitHub:</strong> <a href="https://github.com/shreesomnath" target="_blank">shreesomnath</a>
+    </p>
+  </div>
+</section>
+
 <footer>
   <p>© 2025 Somnath Luitel. All rights reserved.</p>
 </footer>
@@ -164,9 +237,9 @@
 
   function showSection(id) {
     const sections = document.querySelectorAll('.section');
-    sections.forEach(section => section.style.display = 'none');
+    sections.forEach(section => section.classList.remove('active'));
     const target = document.getElementById(id);
-    if (target) target.style.display = 'block';
+    if (target) target.classList.add('active');
     toggleSidebar();
   }
 
