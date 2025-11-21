@@ -11200,3 +11200,8 @@ header {
 .contact-link:hover {
   text-decoration: underline;
 }
+.name-link:hover {
+  text-decoration: none;
+  opacity: 0.9;
+}
+
