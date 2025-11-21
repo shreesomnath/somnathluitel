@@ -11134,3 +11134,69 @@ header {
   color: white;
   overflow: hidden;
 }
+/* === Custom contact section styles === */
+
+.contact-item {
+  max-width: 650px;
+  margin: 0 auto 30px;
+  background-color: #ffffff;
+  border-radius: 14px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+  padding: 20px 24px;
+}
+
+.contact-item h3 {
+  margin-bottom: 16px;
+}
+
+.contact-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.contact-list li {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 10px 0;
+  border-bottom: 1px solid #e0f2f1;
+}
+
+.contact-list li:last-child {
+  border-bottom: none;
+}
+
+.contact-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: #e0f7fa;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.3em;
+}
+
+.contact-text {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.contact-label {
+  font-weight: 700;
+  color: #006064;
+  font-size: 0.95em;
+}
+
+.contact-link {
+  text-decoration: none;
+  color: #004d40;
+  font-size: 0.95em;
+  word-break: break-all;
+}
+
+.contact-link:hover {
+  text-decoration: underline;
+}
